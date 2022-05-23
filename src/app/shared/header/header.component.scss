@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&family=Roboto+Condensed:wght@300;400;700&display=swap');
+
+p {
+    font-family: 'Mulish', sans-serif;
+}
+.nav-link{
+    font-size: 14px;
+    color: #1E202F;
+}
+.navbar-brand img{
+    width: 100%;
+    height: 50px;
+}
+.signup a{
+    color: #4099F1 !important;
+    border: 1px solid #4099F1;
+}
+.left-menus ul{
+    display: flex;
+    list-style: none;
+}
+.nave-sec {
+    padding: 10px 0;
+    margin: 0;
+}

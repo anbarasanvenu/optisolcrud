@@ -1,0 +1,266 @@
+<div class="container-fluid formsec">
+    <div class="row">
+        <div class="col-12 col-md-5 col-xl-5">
+            <div class="foralll-sec">
+                <form [formGroup]="userBioForm" class="form-section">
+                    <div class="">
+                        <div class="row">
+                            <div class="col-12 col-md-12 mt-3">
+                                <div class="p-field p-grid">
+                                    <label class="p-col-fixed"><b>NAME *</b></label>
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <input placeholder="First Name" autocomplete="off" formControlName="firstName"
+                                                class="w-100 form-control" type="text" pInputText>
+                                            <p-message severity="error" text="First name is required"
+                                                *ngIf="userBioForm.controls.firstName.errors && (submit || userBioForm.controls.firstName.dirty || userBioForm.controls.firstName.touched)">
+                                            </p-message>
+                                        </div>
+                                        <div class="col-6">
+                                            <input placeholder="Last Name" autocomplete="off" formControlName="lastName"
+                                                class="w-100 form-control" type="text" pInputText>
+                                            <p-message severity="error" text="Second name is required"
+                                                *ngIf="userBioForm.controls.lastName.errors && (submit || userBioForm.controls.lastName.dirty || userBioForm.controls.lastName.touched)">
+                                            </p-message>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 mt-3">
+                                <div class="p-field p-grid">
+                                    <label class="p-col-fixed"><b>Email *</b></label>
+                                    <input placeholder="Email" autocomplete="off" formControlName="email"
+                                        class="w-100 form-control" type="text" pInputText>
+                                    <p-message severity="error" text="email is required"
+                                        *ngIf="userBioForm.controls.email.errors && (submit || userBioForm.controls.email.dirty || userBioForm.controls.email.touched)">
+                                    </p-message>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 mt-3">
+                                <div class="p-field p-grid">
+                                    <label class="p-col-fixed"><b>PHONE NUMBER *</b></label>
+                                    <input pKeyFilter="int" minlength="10" maxlength="10" placeholder="" autocomplete="off"
+                                        formControlName="phoneNumber" class="w-100 form-control" type="text" pInputText>
+                                    <p-message severity="error" text="Number is required"
+                                        *ngIf="userBioForm.controls.phoneNumber.errors && (submit || userBioForm.controls.phoneNumber.dirty || userBioForm.controls.phoneNumber.touched)">
+                                    </p-message>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 mt-3">
+                                <div class="p-field p-grid">
+                                    <label class="p-col-fixed"><b>ADDRESS *</b></label>
+                                    <div class="row">
+                                        <div class="col-12 mb-3">
+                                            <input placeholder="Line 1" autocomplete="off" formControlName="address1"
+                                                class="w-100 form-control" type="text" pInputText>
+                                            <p-message severity="error" text="address is required"
+                                                *ngIf="userBioForm.controls.address1.errors && (submit || userBioForm.controls.address1.dirty || userBioForm.controls.address1.touched)">
+                                            </p-message>
+                                        </div>
+                                        <div class="col-12">
+                                            <input placeholder="Line 2" autocomplete="off" formControlName="address2"
+                                                class="w-100 form-control" type="text" pInputText>
+                                            <p-message severity="error" text="address is required"
+                                                *ngIf="userBioForm.controls.address2.errors && (submit || userBioForm.controls.address2.dirty || userBioForm.controls.address2.touched)">
+                                            </p-message>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mt-3">
+                                <div class="p-field p-grid">
+                                    <p-dropdown (onChange)="getCityname($event.value)" formControlName="city" class="w-100"
+                                        [options]="cityList" placeholder="City"></p-dropdown>
+                                    <p-message severity="error" text="City is required"
+                                        *ngIf="userBioForm.controls.city.errors && (submit || userBioForm.controls.city.dirty || userBioForm.controls.city.touched)">
+                                    </p-message>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mt-3">
+                                <div class="p-field p-grid">
+                                    <p-dropdown formControlName="state" class="w-100" [options]="SateList" placeholder="State">
+                                    </p-dropdown>
+                                    <p-message severity="error" text="Sate is required"
+                                        *ngIf="userBioForm.controls.state.errors && (submit || userBioForm.controls.state.dirty || userBioForm.controls.state.touched)">
+                                    </p-message>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mt-3">
+                                <div class="p-field p-grid">
+                                    <p-dropdown formControlName="zipCode" class="w-100" [options]="pincodeList"
+                                        placeholder="Code"></p-dropdown>
+                                    <p-message severity="error" text="Pincode is required"
+                                        *ngIf="userBioForm.controls.zipCode.errors && (submit || userBioForm.controls.zipCode.dirty || userBioForm.controls.zipCode.touched)">
+                                    </p-message>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mt-3">
+                                <div class="p-field p-grid">
+                                    <input placeholder="Country" autocomplete="off" formControlName="country"
+                                        class="w-100 form-control" type="text" pInputText>
+                                    <p-message severity="error" text="Country is required"
+                                        *ngIf="userBioForm.controls.country.errors && (submit || userBioForm.controls.country.dirty || userBioForm.controls.country.touched)">
+                                    </p-message>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 mt-3">
+                                <div class="p-field p-grid">
+                                    <label class="p-col-fixed"><b>WRITE YOUR QUALIFICATION *</b></label>
+                                    <input placeholder="" autocomplete="off" formControlName="qualification"
+                                        class="w-100 form-control" type="text" pInputText>
+                                    <p-message severity="error" text="Qualification is required"
+                                        *ngIf="userBioForm.controls.qualification.errors && (submit || userBioForm.controls.qualification.dirty || userBioForm.controls.qualification.touched)">
+                                    </p-message>
+                                </div>
+                            </div>
+                        </div>
+                            <div class="row">
+                                <div class="col-md-12 mt-3">
+                                    <div class="p-field p-grid">
+                                        <label class="p-col-fixed"><b>COMMENT *</b></label>
+                                        <textarea autocomplete="off" formControlName="comments" class="w-100 form-control"
+                                            type="text" pInputTextarea></textarea>
+                                        <p-message severity="error" text="Comment is required"
+                                            *ngIf="userBioForm.controls.comments.errors && (submit || userBioForm.controls.comments.dirty || userBioForm.controls.comments.touched)">
+                                        </p-message>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="rowb mt-3">
+                                <div class="col-12">
+                                    <div class="sub-btn">
+                                        <button *ngIf="btnShow1" class="btn" (click)="SubmitForm()">Submit</button>
+                                        <button *ngIf="btnShow2" class="btn" (click)="updateForm()">Update</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                </form>
+            </div>
+        </div>
+        <div class="col-12 col-md-7 col-xl-7">
+            <div class="row">
+                <div class="col-12">
+                    <div class="tabel-sec" *ngIf="page == 1">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Phone</th>
+                                    <th>Edit</th>
+                                    <th>Delte</th>
+                                    <th>View</th>
+                                </tr>
+                            </thead>
+                            <tbody *ngFor="let data of AllUserList">
+                                <tr>
+                                    <td>{{data.firstName}}</td>
+                                    <td>{{data.email}}</td>
+                                    <td>{{data.phoneNumber}}</td>
+                                    <td><button class="btn btn-blue" (click)="editAllUser(data._id)">Edit</button></td>
+                                    <td><button class="btn red btn-blue" (click)="deleUser(data._id)">Delete</button></td>
+                                    <td><button class="btn blk btn-blue" (click)="getSigleUser(data._id)">View</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="col-12" *ngIf="page == 2">
+                    <div class="table-view" *ngIf="SingleUserData">
+                        <div class="row">
+                            <div class="col-12 text-right">
+                                <button class="btn btn-go" (click)="goBack()">Go Back</button>
+                            </div>
+                        </div>
+                        <div class="row mb-2">
+                            <div class="col-12 col-md-4 col-xl-4"><b>Name</b></div>
+                            <div class="col-12 col-md-1 col-xl-1"><b>:</b></div>
+                            <div class="col-12 col-md-6 col-xl-6">{{SingleUserData.firstName}}</div>
+                        </div>
+                        <div class="row mb-2">
+                            <div class="col-12 col-md-4 col-xl-4"><b>Email</b></div>
+                            <div class="col-12 col-md-1 col-xl-1"><b>:</b></div>
+                            <div class="col-12 col-md-6 col-xl-6">{{SingleUserData.email}}</div>
+                        </div>
+                        <div class="row mb-2">
+                            <div class="col-12 col-md-4 col-xl-4"><b>Phone Number</b></div>
+                            <div class="col-12 col-md-1 col-xl-1"><b>:</b></div>
+                            <div class="col-12 col-md-6 col-xl-6">{{SingleUserData.phoneNumber}}</div>
+                        </div>
+                        <div class="row mb-2">
+                            <div class="col-12 col-md-4 col-xl-4"><b>Adress</b></div>
+                            <div class="col-12 col-md-1 col-xl-1"><b>:</b></div>
+                            <div class="col-12 col-md-6 col-xl-6">{{SingleUserData.address1}}</div>
+                        </div>
+                        <div class="row mb-2">
+                            <div class="col-12 col-md-4 col-xl-4"><b></b></div>
+                            <div class="col-12 col-md-1 col-xl-1"><b></b></div>
+                            <div class="col-12 col-md-6 col-xl-6">{{SingleUserData.address2}}</div>
+                        </div>
+                        <div class="row mb-2">
+                            <div class="col-12 col-md-4 col-xl-4"><b>City</b></div>
+                            <div class="col-12 col-md-1 col-xl-1"><b>:</b></div>
+                            <div class="col-12 col-md-6 col-xl-6">
+                                {{
+                                    (SingleUserData.city == '1') ? 'Chennai' :
+                                    (SingleUserData.city == '2') ? 'Pune' :
+                                    (SingleUserData.city == '3') ? 'Bangalore' : 'Kochi'
+                                }}
+                            </div>
+                        </div>
+                        <div class="row mb-2">
+                            <div class="col-12 col-md-4 col-xl-4"><b>State</b></div>
+                            <div class="col-12 col-md-1 col-xl-1"><b>:</b></div>
+                            <div class="col-12 col-md-6 col-xl-6">
+                                {{
+                                    (SingleUserData.state == '1') ? 'Tamil Nadu' :
+                                    (SingleUserData.state == '2') ? 'Maharastra' :
+                                    (SingleUserData.state == '3') ? 'Karnadaka' : 'Kerala'
+                                }}
+                            </div>
+                        </div>
+                        <div class="row mb-2">
+                            <div class="col-12 col-md-4 col-xl-4"><b>Code</b></div>
+                            <div class="col-12 col-md-1 col-xl-1"><b>:</b></div>
+                            <div class="col-12 col-md-6 col-xl-6">
+                                {{
+                                    (SingleUserData.code == '1') ? '600001' :
+                                    (SingleUserData.code == '2') ? '400002' :
+                                    (SingleUserData.code == '3') ? '500001' : '700001'
+                                }}
+                            </div>
+                        </div>
+                        <div class="row mb-2">
+                            <div class="col-12 col-md-4 col-xl-4"><b>Country</b></div>
+                            <div class="col-12 col-md-1 col-xl-1"><b>:</b></div>
+                            <div class="col-12 col-md-6 col-xl-6">{{SingleUserData.country}}</div>
+                        </div>
+                        <div class="row mb-2">
+                            <div class="col-12 col-md-4 col-xl-4"><b>Qualification</b></div>
+                            <div class="col-12 col-md-1 col-xl-1"><b>:</b></div>
+                            <div class="col-12 col-md-6 col-xl-6">{{SingleUserData.qualification}}</div>
+                        </div>
+                        <div class="row mb-2">
+                            <div class="col-12 col-md-4 col-xl-4"><b>Comments</b></div>
+                            <div class="col-12 col-md-1 col-xl-1"><b>:</b></div>
+                            <div class="col-12 col-md-6 col-xl-6">{{SingleUserData.comments}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

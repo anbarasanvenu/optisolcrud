@@ -1,0 +1,62 @@
+
+.sub-btn button{
+    background: gray;
+    color: #fff;
+    text-align: center;
+    width: 100%;
+}
+.tabel-sec table{
+    border-collapse: collapse;
+    width: 100%;
+}
+.tabel-sec table thead tr{
+    padding: 8px;
+    line-height: 1.95857;
+    vertical-align: top;
+    border-bottom: 1px solid #ddd;
+    // text-align: center;
+}
+.tabel-sec table tbody tr{
+    padding: 5px 20px;
+    line-height: 1.95857;
+    vertical-align: top;
+    border-bottom: 1px solid #ddd;
+}
+.btn-blue{
+    border-radius: 4px;
+    padding: 4px 6px;
+    color: #fff;
+    font-weight: bold;
+    background: #1ab0ef;
+    border: none;
+    width: 70px;
+    font-size: 13px;
+    margin: 5px 10px;
+}
+.red {
+    background: #f00;
+}
+.blk {
+    background: #000;
+}
+// .foralll-sec {
+//     padding: 25px 50px;
+// }
+.formsec{
+    padding: 0 50px;
+}
+.tabel-sec{
+    margin-top: 20px;
+}
+.table-view {
+    margin-top: 40px;
+    background: rgb(228, 228, 228);
+    padding: 10px;
+}
+.text-right {
+    text-align: right;
+}
+.btn-go{
+    background: #d16c05;
+    color: #fff;
+}
